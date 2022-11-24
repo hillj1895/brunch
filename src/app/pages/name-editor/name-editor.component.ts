@@ -42,6 +42,6 @@ export class NameEditorComponent implements OnInit {
 
   public generate() {
     this.namesService.setNames(this.players);
-    this.router.navigateByUrl('results');
+    this.router.navigate(['/results']);
   }
 }

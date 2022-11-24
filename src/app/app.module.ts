@@ -10,9 +10,10 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { ResultsComponent } from './pages/results/results.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NameEditorComponent],
+  declarations: [AppComponent, HomeComponent, NameEditorComponent, ResultsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

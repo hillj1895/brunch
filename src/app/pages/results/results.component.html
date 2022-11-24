@@ -1,0 +1,40 @@
+<a routerLink="/names"> Back to names</a>
+<p-card header="Results">
+  <div class="flex justify-content-center">
+    <p>
+      <strong>{{ this.matches[this.currentIndex].gifter }}</strong> will give to
+      (hold to show):
+    </p>
+  </div>
+  <div class="flex justify-content-center" style="min-height: 60px">
+    <p *ngIf="this.showRecipient">
+      <strong>
+        {{ this.matches[this.currentIndex].recipient }}
+      </strong>
+    </p>
+  </div>
+  <div class="flex justify-content-center">
+    <button
+      pButton
+      label="Show"
+      (mousedown)="this.showRecipient = true"
+      (mouseup)="this.showRecipient = false"
+    ></button>
+  </div>
+  <ng-template pTemplate="footer">
+    <div class="flex justify-content-between">
+      <p-button
+        class="p-button-sm"
+        label="Previous"
+        icon="pi pi-chevron-left"
+        (click)="this.previous()"
+      ></p-button>
+      <p-button
+        class="p-button-sm"
+        label="Next"
+        icon="pi pi-chevron-right"
+        (click)="this.next()"
+      ></p-button>
+    </div>
+  </ng-template>
+</p-card>
