@@ -1,0 +1,51 @@
+<p-card header="Players">
+  <ng-container *ngIf="!this.players.length">
+    <div class="flex justify-content-center">
+      <p>Add players to begin!</p>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="this.players.length">
+    <ul>
+      <li *ngFor="let player of this.players">
+        <div class="flex justify-content-between">
+          <p>{{ player }}</p>
+          <div>
+            <button
+              pButton
+              pRipple
+              (click)="this.removePlayer(player)"
+              type="button"
+              icon="pi pi-trash"
+              class="p-button-rounded p-button-danger"
+              styleClass="p-button-sm"
+            ></button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </ng-container>
+  <form [formGroup]="this.playerForm">
+    <div class="p-inputgroup">
+      <input
+        type="text"
+        pInputText
+        formControlName="player"
+        placeholder="Player name"
+      />
+      <button
+        type="submit"
+        pButton
+        pRipple
+        icon="pi pi-plus"
+        styleClass="p-button-success"
+        (click)="this.submit()"
+      ></button>
+    </div>
+  </form>
+  <!-- <div class="p-fluid"> -->
+  <div class="flex justify-content-center my-3">
+    <button pButton (click)="this.generate()" [disabled]="!this.players.length">
+      Generate
+    </button>
+  </div>
+</p-card>

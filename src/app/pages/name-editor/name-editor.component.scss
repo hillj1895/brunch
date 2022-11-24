@@ -1,0 +1,12 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+:host {
+  ::ng-deep .p-card-content {
+    padding-top: 0;
+  }
+
+}
