@@ -16,9 +16,8 @@
   <div class="flex justify-content-center">
     <button
       pButton
-      label="Show"
-      (mousedown)="this.showRecipient = true"
-      (mouseup)="this.showRecipient = false"
+      [label]="!this.showRecipient ? 'Show' : 'Hide'"
+      (click)="this.showRecipient = !this.showRecipient"
     ></button>
   </div>
   <ng-template pTemplate="footer">
