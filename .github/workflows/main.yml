@@ -31,3 +31,7 @@ jobs:
       - name: Deploy
         if: success()
         run: aws s3 sync --delete ./dist/secret-santa ${{ secrets.AWS_S3_BUCKET }}
+
+      - name: Cloudfront Invalidation
+        if: success()
+        run: aws cloudfront create-invalidation --distribution-id E1PVN3MQIWIGOA --paths '/*'
