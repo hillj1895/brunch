@@ -17,7 +17,7 @@ export class NameEditorComponent implements OnInit {
   ngOnInit(): void {
     this.players = this.namesService.getAllNames() || [];
     this.playerForm = new FormGroup({
-      player: new FormControl(null),
+      player: new FormControl(null, [Validators.required]),
     });
   }
 

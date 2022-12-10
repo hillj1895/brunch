@@ -39,6 +39,7 @@
         icon="pi pi-plus"
         styleClass="p-button-success"
         (click)="this.submit()"
+        [disabled]="!this.playerForm.valid"
       ></button>
     </div>
   </form>
