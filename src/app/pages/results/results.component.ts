@@ -36,6 +36,7 @@ export class ResultsComponent implements OnInit {
   }
 
   public next() {
+    this.showRecipient = false;
     if (this.currentIndex >= this.matches.length - 1) {
       this.currentIndex = 0;
     } else {

@@ -18,10 +18,10 @@ export class MatcherService {
         recipient: shuffledShiftedNames[i],
       });
     }
-    return pairings;
+    return this.shuffle(pairings);
   }
 
-  public shuffle(names: string[]): string[] {
+  public shuffle(names: any[]): any[] {
     for (let i = 0; i < names.length; i++) {
       const element = names[i];
       const swapWithIndex = Math.floor(Math.random() * names.length);
